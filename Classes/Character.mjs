@@ -9,6 +9,49 @@ export default class Character
         this.inventory = inventory;
     }
 
+    showAllAttributes()
+    {
+        console.log(this.name);
+        console.log("----------------");
+        console.log(" ");
+        console.log("Attributes:")
+        console.log("----------------");
+        console.log("Level: " + this.level);
+        console.log("Age: " + this.age);
+        console.log("Stamina: " + this.stamina);
+        console.log("----------------");
+
+        this.showAllWeapon();
+
+        this.showAllArmor();
+    }
+
+    showAllWeapon()
+    {
+        console.log("Weapons: ");
+        console.log("----------------");
+        for(let i=0; i<this.inventory.length; i++)
+        {
+            if(this.inventory[i].getType() === 1)
+            {
+                this.inventory[i].showAttributes();
+            }
+        }
+    }
+
+    showAllArmor()
+    {
+        console.log("Armors: ");
+        console.log("----------------");
+        for(let i=0; i<this.inventory.length; i++)
+        {
+            if(this.inventory[i].getType() === 0)
+            {
+                this.inventory[i].showAttributes();
+            }
+        }
+    }
+
     getAllArmor()
     {
         let armors = [];

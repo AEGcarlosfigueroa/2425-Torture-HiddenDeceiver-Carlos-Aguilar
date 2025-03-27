@@ -8,9 +8,28 @@ function execute()
 {
     const characters = createCharacters();
 
-    showAllArmors(characters);
+    showAllCharacters(characters);
 
-    showAllWeapons(characters);
+    //showAllArmors(characters);
+
+    //showAllWeapons(characters);
+}
+
+function showAllCharacters(characterArray)
+{
+    console.log("CHARACTER LIST")
+    console.log("--------------------");
+    console.log(" ")
+    for(let i=0; i<characterArray.length; i++)
+    {
+        const character = characterArray[i];
+
+        character.showAllAttributes();
+
+        console.log(" ");
+        console.log("--------------------");
+        console.log(" ");
+    }
 }
 
 function createCharacters()

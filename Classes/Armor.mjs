@@ -17,6 +17,10 @@ export default class Armor
     {
         //console.log(this.name);
         
-        console.log(this.name + ": Min Level = " + this.minLevel + ", Defense = " + this.defense);
+        console.log("Name: " + this.name);
+        console.log("Min level: " + this.minLevel);
+        console.log("Defense: " + this.defense);
+        console.log("----------------");
+        
     }
 }
