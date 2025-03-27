@@ -8,6 +8,11 @@ export default class Armor
         this.equipmentType = 0; //Armor
     }
 
+    getLevel()
+    {
+        return this.minLevel;
+    }
+
     getType()
     {
         return this.equipmentType;

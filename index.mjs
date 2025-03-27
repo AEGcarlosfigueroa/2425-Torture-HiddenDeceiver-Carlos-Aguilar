@@ -8,9 +8,9 @@ function execute()
 {
     const characters = createCharacters();
 
-    showAllCharacters(characters);
+    //showAllCharacters(characters);
 
-    //showAllArmors(characters);
+    showAllArmorsBelow30(characters);
 
     //showAllWeapons(characters);
 }
@@ -59,6 +59,29 @@ function showAllWeapons(characterArray)
         for(let j=0; j<weapons.length; j++)
         {
             weapons[j].showAttributes();
+        }
+    }
+
+    console.log(" ");
+}
+
+function showAllArmorsBelow30(characterArray)
+{
+    console.log("Armor List (below 30)");
+    console.log("----------------")
+    for(let i=0; i<characterArray.length; i++)
+    {
+        const character = characterArray[i];
+
+        const armors = character.getAllArmor();
+
+        for(let j=0; j<armors.length; j++)
+        {
+            if(armors[j].getLevel() < 30)
+            {
+                armors[j].showAttributes();
+            }
+            
         }
     }
 
