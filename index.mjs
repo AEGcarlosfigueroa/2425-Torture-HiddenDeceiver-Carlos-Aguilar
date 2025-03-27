@@ -2,15 +2,15 @@ import Armor from "./Classes/Armor.mjs";
 import Weapon from "./Classes/Weapon.mjs";
 import Character from "./Classes/Character.mjs";
 
-console.log("start");
-
 execute();
 
 function execute()
 {
     const characters = createCharacters();
 
-    console.log(characters);
+    showAllArmors(characters);
+
+    showAllWeapons(characters);
 }
 
 function createCharacters()
@@ -25,6 +25,44 @@ function createCharacters()
 
     return characterArray;
 
+}
+
+function showAllWeapons(characterArray)
+{
+    console.log("Weapon List");
+    console.log("----------------")
+    for(let i=0; i<characterArray.length; i++)
+    {
+        const character = characterArray[i];
+
+        const weapons = character.getAllWeapon();
+
+        for(let j=0; j<weapons.length; j++)
+        {
+            weapons[j].showAttributes();
+        }
+    }
+
+    console.log(" ");
+}
+
+function showAllArmors(characterArray)
+{
+    console.log("Armor List");
+    console.log("----------------")
+    for(let i=0; i<characterArray.length; i++)
+    {
+        const character = characterArray[i];
+
+        const armors = character.getAllArmor();
+
+        for(let j=0; j<armors.length; j++)
+        {
+            armors[j].showAttributes();
+        }
+    }
+
+    console.log(" ");
 }
 
 function createSeraphina()

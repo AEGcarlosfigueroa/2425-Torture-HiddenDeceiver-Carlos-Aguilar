@@ -8,4 +8,35 @@ export default class Character
         this.stamina = stamina;
         this.inventory = inventory;
     }
+
+    getAllArmor()
+    {
+        let armors = [];
+
+        for(let i=0; i<this.inventory.length; i++)
+        {
+            if(this.inventory[i].getType() === 0)
+            {
+                armors.push(this.inventory[i]);
+            }
+        }
+
+        return armors;
+    }
+
+    getAllWeapon()
+    {
+        let weapons = [];
+
+        for(let i=0; i<this.inventory.length; i++)
+        {
+            if(this.inventory[i].getType() === 1)
+            {
+                weapons.push(this.inventory[i]);
+            }
+        }
+
+        return weapons;
+    }
+
 }
