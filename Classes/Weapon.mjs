@@ -14,13 +14,16 @@ export default class Weapon
         return this.equipmentType;
     }
 
+    getLevel()
+    {
+        return this.minLevel;
+    }
+
     showAttributes()
     {
         //console.log(this.name);
         console.log("Name: " + this.name);
         console.log("Min level: " + this.minLevel);
-        console.log("Damage: " + this.damage);
-        console.log("Durability: " + this.durability);
         console.log("----------------");
     
     }

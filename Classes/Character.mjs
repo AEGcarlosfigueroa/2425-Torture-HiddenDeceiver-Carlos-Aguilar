@@ -1,29 +1,34 @@
 export default class Character
 {
-    constructor(name, level, age, stamina, inventory)
+    constructor(name, level, age, stamina)
     {
         this.name = name;
         this.level = level;
         this.age = age;
         this.stamina = stamina;
-        this.inventory = inventory;
+        this.inventory = [];
+    }
+
+    addItem(item)
+    {
+        this.inventory.push(item);
+    }
+
+    getLevel()
+    {
+        return this.level;
     }
 
     showAllAttributes()
     {
-        console.log(this.name);
         console.log("----------------");
-        console.log(" ");
-        console.log("Attributes:")
-        console.log("----------------");
+        console.log("Name: " + this.name);
         console.log("Level: " + this.level);
-        console.log("Age: " + this.age);
-        console.log("Stamina: " + this.stamina);
-        console.log("----------------");
+        console.log(" ");
 
         this.showAllWeapon();
 
-        this.showAllArmor();
+        //this.showAllArmor();
     }
 
     showAllWeapon()
