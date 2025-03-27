@@ -9,6 +9,54 @@ export default class Character
         this.inventory = [];
     }
 
+    fumble()
+    {
+        const weapons = this.getAllWeapon();
+
+        const randomValue = Math.floor(Math.random()*weapons.length);
+
+        const weapon = weapons[randomValue];
+
+        const armors = this.getAllArmor();
+
+        const randomValue2 = Math.floor(Math.random()*armors.length);
+
+        const armor = armors[randomValue2];
+
+        console.log("BEFORE");
+
+        this.showAttributes(weapon, armor);
+
+        const damageWeapon = weapon.getDamage();
+
+        const damageDone = Math.ceil((damageWeapon + this.level)/ 4);
+
+        armor.reduceDefenseBy(damageDone);
+
+        weapon.reduceDurability();
+
+        this.stamina -= 5;
+
+        console.log("AFTER");
+
+        this.showAttributes(weapon, armor);
+    }
+
+    showAttributes(weapon, armor)
+    {
+        console.log("----------------");
+        console.log("Name: " + this.name);
+        console.log("Level: " + this.level);
+        console.log("Stamina: " + this.stamina);
+        console.log("-------------");
+        console.log("Weapon");
+        console.log("-------------");
+        weapon.showAttributes();
+        console.log("Armor")
+        console.log("-------------");
+        armor.showAttributes();
+    }
+
     addItem(item)
     {
         this.inventory.push(item);

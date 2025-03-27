@@ -9,6 +9,16 @@ export default class Weapon
         this.equipmentType = 1; //Weapon
     }
 
+    reduceDurability()
+    {
+        this.durability -= 2;
+    }
+
+    getDamage()
+    {
+        return this.damage;
+    }
+
     getType()
     {
         return this.equipmentType;
@@ -24,6 +34,8 @@ export default class Weapon
         //console.log(this.name);
         console.log("Name: " + this.name);
         console.log("Min level: " + this.minLevel);
+        console.log("Damage: " + this.damage);
+        console.log("Durability: " + this.durability);
         console.log("----------------");
     
     }

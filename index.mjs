@@ -8,11 +8,13 @@ function execute()
 {
     const characters = createCharacters();
 
-    showAllCharacters(characters);
+    //showAllCharacters(characters);
 
     //showAllArmorsBelow30(characters);
 
     //showAllWeapons(characters);
+
+    characters[2].fumble();
 }
 
 function showAllCharacters(characterArray)
